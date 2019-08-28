@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Eliminar Profesor</h1>
+  <form #nuevoProfesor="ngForm" (ngSubmit)="onSumbit(nuevoProfesor)">
+    <div class="form-group">
+      <label for="Cedula">Cedula Profesor</label>
+      <input type="text" class="form-control" id="Cedula" name="Cedula" ngModel>
+    </div>
+    <button class="btn btn-primary btn-block">Eliminar</button>
+  </form>
+</div>

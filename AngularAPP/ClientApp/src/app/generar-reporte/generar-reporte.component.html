@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Generar Reporte</h1>
+  <form #Reporte="ngForm" (ngSubmit)="onSumbit(Reporte)">
+    <div class="form-group">
+      <label for="id">Id Estudiante</label>
+      <input type="text" class="form-control" id="id" name="id" ngModel>
+    </div>
+    <button class="btn btn-primary btn-block">Generar Reporte</button>
+  </form>
+  <div *ngIf="Estudiante">
+    <ul>
+      <li>Nombre Estudiante: {{Estudiante.alumno_info.nombre}}</li>
+      <li>Apellido Estudiante: {{Estudiante.alumno_info.apellido}}</li>
+      <ul *ngFor="let materia of Estudiante.materia; let i=index">
+        <p>Materia {{i+1}}</p>
+        <hr>
+        <li>Id Materia: {{materia.idMateria}}</li>
+        <li>Nombre Materia: {{materia.materia}}</li>
+        <li>Nota Periodo 1: {{materia.periodo1}}</li>
+        <li>Nota Periodo 2: {{materia.periodo2}}</li>
+        <li>Nombre Profesor: {{materia.profesorNombre}} {{materia.profesorApellido}}</li>
+      </ul>
+    </ul>
+  </div>
+</div>
